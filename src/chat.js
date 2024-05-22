@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import './Chat.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const socket = io('http://localhost:3000');
 
@@ -37,8 +39,10 @@ const Chat = () => {
           ...prevMessages,
           { user: 'System', text: `${user} has joined the room.`, system: true },
         ]);
+        toast.success(`${user} has joined the room.`);
       }
     });
+
 
     socket.on('userLeft', (user, roomleft) => {
       if (chatType === 'room' && roomleft === room) {
@@ -46,6 +50,8 @@ const Chat = () => {
           ...prevMessages,
           { user: 'System', text: `${user} has left the room.`, system: true },
         ]);
+
+        toast.error(`${user} has left the room.`);
       }
     });
 
@@ -258,6 +264,7 @@ const Chat = () => {
           </div>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 };
