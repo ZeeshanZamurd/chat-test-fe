@@ -1,0 +1,169 @@
+.chat-container {
+  display: flex;
+  height: 100vh;
+  background-color: #e5e5ea;
+  width: 70%;
+}
+
+.chat-sidebar {
+  width: 30%;
+  background-color: #f0f0f5;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.username-display {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  background-color: #007aff;
+  color: #fff;
+}
+
+.join-room-section {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f0f0f5;
+}
+
+.join-room-section input {
+  width: calc(100% - 30px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.join-room-section button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.join-room-section button:hover {
+  background-color: #005bb5;
+}
+
+.conversations {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #f0f0f5;
+}
+
+.conversations-header {
+  padding: 10px;
+  background-color: #007aff;
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+  font-weight: semibold;
+}
+
+.conversation {
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #000; /* Ensure text is black for readability */
+}
+
+.conversation:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.conversation:hover {
+  background-color: #e5e5ea;
+}
+
+.conversation.active {
+  background-color: #d6d6d6;
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e5ea;
+}
+
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.message {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.message.self {
+  justify-content: flex-end;
+}
+
+.message.self .message-content {
+  background-color: #005bb5; /* Darker blue */
+  color: #fff; /* White text */
+}
+
+.message .message-content {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.message.other .message-content {
+  background-color: #444; /* Dark grey */
+  color: #fff; /* White text */
+}
+
+.message.system {
+  justify-content: center;
+  background-color: #e5e5ea;
+  color: #000;
+  font-style: italic;
+}
+
+.typing {
+  padding: 10px;
+  font-style: italic;
+  color: #888;
+}
+
+.message-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #f8f8f8;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.message-input button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.message-input button:hover {
+  background-color: #005bb5;
+}
